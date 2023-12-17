@@ -6,6 +6,14 @@ Zot is an esolang originally invented by Chris Barker and we wrapped it with Qui
 * https://web.archive.org/web/20200414141014/http://www.nyu.edu/projects/barker/Iota/zot.html
 * https://en.wikipedia.org/wiki/Iota_and_Jot
 
+## Dependencies
+
+Please install quickjs first.
+
+```bash
+brew install quickjs
+```
+
 ## Build
 
 To build the zot binary
