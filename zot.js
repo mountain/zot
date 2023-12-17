@@ -6,6 +6,9 @@
  *
 **/
 
+import { loadFile } from "std";
+
+
 let output;
 
 function I(x) { return x; }
@@ -80,6 +83,5 @@ function run(string) {
     return output.join('');
 }
 
-import { loadFile } from 'std';
 
-print(run(loadFile(scriptArgs[1]).trim() + scriptArgs[2].trim()));
+console.log(run(loadFile(scriptArgs[1]).trim() + scriptArgs[2].trim()));
