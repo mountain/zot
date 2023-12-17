@@ -80,4 +80,6 @@ function run(string) {
     return output.join('');
 }
 
-print(run(std.loadFile(scriptArgs[1]).trim() + scriptArgs[2].trim()))
+import { loadFile } from 'std';
+
+print(run(loadFile(scriptArgs[1]).trim() + scriptArgs[2].trim()));
