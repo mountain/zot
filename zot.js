@@ -57,10 +57,10 @@ function trivial(x) {
     return x(I);
 }
 
-function zot(string) {
+function zot(prog) {
     function process(position, value) {
-        if (position >= string.length) { return value }
-        if (string.charAt(position) === "0") {
+        if (position >= prog.length) { return value }
+        if (prog.charAt(position) === "0") {
             return process (position + 1, value(zero))
         }
         return process (position + 1, value(one))
@@ -77,11 +77,11 @@ function pr(ch) {
     return pr;
 }
 
-function run(string) {
+function run(prog) {
     output = [];
-    ((zot(string))(K(K(K(K(K(K(I))))))))(pr);
+    ((zot(prog))(K(K(K(K(K(K(I))))))))(pr);
     return output.join('');
 }
 
-
-console.log(run(loadFile(scriptArgs[1]).trim() + scriptArgs[2].trim()));
+const progFile = scriptArgs[1], data = scriptArgs[2];
+console.log(run(loadFile(progFile).trim() + data.trim()));
